@@ -1,12 +1,19 @@
-package com.chakri.ProductManagementUsingSpring;
+package com.productmanagement.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 
 @Entity
 public class Product {
 
-    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@Column(name = "ID")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "id_Sequence")
+	@SequenceGenerator(name = "id_Sequence", sequenceName = "ID_SEQ")
     private int id;
     private String name;
     private String type;
