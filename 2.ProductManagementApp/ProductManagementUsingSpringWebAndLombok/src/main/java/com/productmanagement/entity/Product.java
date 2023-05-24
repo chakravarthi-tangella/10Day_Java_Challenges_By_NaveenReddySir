@@ -1,84 +1,80 @@
 package com.productmanagement.entity;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "PRODUCT")
 public class Product {
 
+//	@Column(name = "ID")
+//	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "id_Sequence")
+//	@SequenceGenerator(name = "id_Sequence", sequenceName = "ID_SEQ")
 	@Id
-	@Column(name = "ID")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "id_Sequence")
-	@SequenceGenerator(name = "id_Sequence", sequenceName = "ID_SEQ")
-    private int id;
-    private String name;
-    private String type;
-    private String place;
-    private int warranty;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private String name;
+	private String type;
+	private String place;
+	private int warranty;
 
-    public Product()
-    {
+	public Product() {
 
-    }
-    public Product(String name,String type, String place, int warranty)
-    {
-        this.name = name;
-        this.place = place;
-        this.type = type;
-        this.warranty = warranty;
-    }
+	}
 
-    public int getId() {
-        return id;
-    }
+	public Product(String name, String type, String place, int warranty) {
+		this.name = name;
+		this.place = place;
+		this.type = type;
+		this.warranty = warranty;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getType() {
-        return type;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setType(String type) {
-        this.type = type;
-    }
+	public String getType() {
+		return type;
+	}
 
-    public String getPlace() {
-        return place;
-    }
+	public void setType(String type) {
+		this.type = type;
+	}
 
-    public void setPlace(String place) {
-        this.place = place;
-    }
+	public String getPlace() {
+		return place;
+	}
 
-    public int getWarranty() {
-        return warranty;
-    }
+	public void setPlace(String place) {
+		this.place = place;
+	}
 
-    public void setWarranty(int warranty) {
-        this.warranty = warranty;
-    }
+	public int getWarranty() {
+		return warranty;
+	}
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", place='" + place + '\'' +
-                ", warranty=" + warranty +
-                '}';
-    }
+	public void setWarranty(int warranty) {
+		this.warranty = warranty;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + ", type=" + type + ", place=" + place + ", warranty=" + warranty
+				+ "]";
+	}
 }

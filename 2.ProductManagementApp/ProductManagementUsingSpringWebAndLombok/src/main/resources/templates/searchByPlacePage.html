@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymelead.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Search Products</title>
+    <script>
+        function searchProducts() {
+            var searchPlace = document.getElementById("searchPlace").value;
+            window.location.href = "/product/searchByPlace/" + searchPlace;
+        }
+    </script>
+</head>
+<body>
+    <h1>Search Products</h1>
+    <div>
+        <label for="searchPlace">Search Place:</label>
+        <input type="text" id="searchPlace" name="searchPlace">
+        <button onclick="searchProducts()">Search</button>
+    </div>
+</body>
+</html>
