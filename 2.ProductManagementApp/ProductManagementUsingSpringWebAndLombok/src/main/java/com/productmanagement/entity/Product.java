@@ -9,10 +9,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "PRODUCT")
 public class Product {
-
-//	@Column(name = "ID")
-//	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "id_Sequence")
-//	@SequenceGenerator(name = "id_Sequence", sequenceName = "ID_SEQ")
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -24,7 +21,7 @@ public class Product {
 	public Product() {
 
 	}
-
+	
 	public Product(String name, String type, String place, int warranty) {
 		this.name = name;
 		this.place = place;
